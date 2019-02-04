@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+
+  <h1>
+    Coding Challenge: Sum All Numbers in a Range
+  </h1>
+
+  <h2 style="color: red">
+    Open web console in order to view results.
+  </h2>
+
+
+  <pre>
+    We'll pass you an array of two numbers. Return the sum of those two numbers plus the sum of all the numbers between them.
+
+    The lowest number will not always come first.
+
+    Soruce: https://learn.freecodecamp.org
+  </pre>
+  <script>
+    function sumAll(arr) {
+      let smallest;
+      let largest;
+      if(arr[0] >= arr[1]){
+        smallest = arr[1];
+        largest = arr[0];
+      }else{
+        smallest = arr[0];
+        largest = arr[1];
+      }
+
+      // Get sum of both smallest and largest values in
+      // the array along with the numbers in between
+      // both values
+      let sum = 0;
+      for(let i = smallest; i <= largest; i++){
+        sum += i;
+      }
+      return sum;
+    }
+    console.log(sumAll([1,4]));
+  </script>
+
+</body>
+</html>
