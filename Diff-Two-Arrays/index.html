@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <h1>
+    Coding Challenge: Sum All Numbers in a Range
+  </h1>
+
+  <h2 style="color: red">
+    Open web console in order to view results.
+  </h2>
+
+  <pre>
+    Compare two arrays and return a new array with any items only found in one of the two given arrays, but not both.
+    In other words, return the symmetric difference of the two arrays.
+    Source: https://learn.freecodecamp.org
+  </pre>
+
+  <script>
+    function diffArray(arr1, arr2) {
+      // Contains the difference values
+      var newArr = [];
+
+      // Compare each value in both arrays to find
+      // values that differ between them and add
+      // those values to the "newArr" array.
+      for(let i = 0; i < arr1.length; i++){
+        if(!inArray(arr1[i], arr2)){
+          newArr.push(arr1[i]);
+        }
+      }
+      for(let i = 0; i < arr2.length; i++){
+        if(!inArray(arr2[i], arr1)){
+          newArr.push(arr2[i]);
+        }
+      }
+
+      return newArr;
+    }
+
+    // This function takes in any value and an array.
+    // If the value is within the array at least once then
+    // this function returns the value "true" otherwise
+    // it returns the value "false"
+    function inArray(value, array){
+    for(let i = 0; i < array.length; i++){
+      if(value === array[i]){
+        return true;
+      }
+    }
+      return false;
+    }
+
+    console.log(diffArray([1,2,3,5], [1,10,3,4,5]));
+  </script>
+</body>
+</html>
