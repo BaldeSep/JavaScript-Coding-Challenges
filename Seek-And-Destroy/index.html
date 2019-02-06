@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <h1>
+    Seek and Destroy
+  </h1>
+  <h2 style="color:red">
+    To see results open web console.
+  </h2>
+  <pre>
+    You will be provided with an initial array (the first argument in the destroyer function),
+    followed by one or more arguments. Remove all elements from the initial array that are of the same
+     value as these arguments.
+
+    Souce: https://learn.freecodecamp.org
+
+  </pre>
+  <script>
+
+    function destroyer(arr) {
+      for(let i = 1; i < arguments.length; i++){
+        let j = 0;
+        while(j < arr.length){
+          if(arr[j] === arguments[i]){
+            arr.splice(j,1);
+            j = -1;
+          }
+          j++;
+        }
+      }
+      return arr;
+    }
+    console.log(destroyer([1,1,2,2,3,5],1,5));
+  </script>
+</body>
+</html>
